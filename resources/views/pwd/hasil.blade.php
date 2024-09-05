@@ -9,8 +9,12 @@
    <!--navbar-->
    <x-navbar></x-navbar>
 
+   <div class=" text-white bg-gray-900 absolute ml-[1115px] w-[190px] top-16 rounded-b-lg">
+    <p id="search_list"></p>
+  </div>
+
     <div class="mt-10">
-        <h1 class="text-white text-3xl font-bold ml-[700px]">Book</h1>
+        <h1 class="text-white text-3xl font-bold ml-[700px]">Results</h1>
           <p class="text-white font-light text-base mt-3 ml-[550px]">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
     </div>
     <div class="ml-16">

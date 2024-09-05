@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -13,21 +14,30 @@
 <!--navbar-->
 <x-navbar></x-navbar>
 
+<!--banner-->
+<div class ="relative">
+  <h2 class = "absolute text-white font-bold text-[50px] mt-[130px] ml-[80px] font-['space_grotesk']">Get acces to every <br> writings from all over <br> the world</h2>
+  <img src="{{ asset ('img/poster6.jpg/')}}" alt="poster" class = " rounded-2xl w-full h-[470px] object-cover">
+</div>
+
     <!--slider-->
+    <div class="mt-10 flex justify-center">
+      <h1 class="text-white text-3xl font-bold">Recomended For You</h1>
+  </div>
+
     <div class="flex justify-center relative">
-    <div class="bg-[#262C4B] rounded-lg w-[1350px] h-[460px] mt-10 absolute shadow-lg shadow-gray-500"></div>
       <div class="swiper mySwiper">
         <div class="swiper-wrapper">
           @foreach($book as $data)
           <div class="swiper-slide">
             <a href="{{ route('pwd.detail',['book'=>$data] ) }}"> 
               <div class=" relative">
-                <div class=" absolute bg-black h-full w-full opacity-0 hover:opacity-50 transition ease-in-out duration-150">
+                <div class=" absolute bg-black h-full w-full opacity-0 rounded-lg hover:opacity-50 transition ease-in-out duration-150">
                   <div> 
                     <h1 class="text-white flex justify-center text-2xl mt-36 font-semibold text-center px-5">{{ $data->judul }}</h1>
                   </div>
                 </div>
-              <img class=" w-[350px] h-[350px] object-cover" src="{{ asset('img/buku/'.$data->sampul) }}" />  
+              <img class=" w-[350px] h-[350px] object-cover rounded-lg" src="{{ asset('img/buku/'.$data->sampul) }}" />  
               </div>
             </a>
           </div>
@@ -37,7 +47,9 @@
      <x-sliderlayout></x-sliderlayout>
     </div>
 
-    <div class=" text-white bg-slate-300 absolute ml-[1175px] w-32 top-16" id="search_list"></div>
+    <div class=" text-white bg-gray-900 absolute ml-[1115px] w-[190px] top-16 rounded-b-lg">
+      <p id="search_list"></p>
+    </div>
 
   <!--Container-->
   @foreach($book->slice(0,2) as $data)
