@@ -47,9 +47,13 @@
     </div>    
     </div>    
     <div class="flex justify-center mt-8">
-        <div>
-            <button class="text-xl font-semibold px-12 py-3 bg-gray-300 rounded-md hover:bg-gray-400"><a href="/img/pdf/{{ $book->file }}">Mulai Membaca</a></button>
-        </div>
+        <a href="/img/pdf/{{ $book->file }}">
+         <div class=" relative w-60 h-28 flex justify-center">
+            <button class=" w-60 h-14 bg-gray-300 rounded-md hover:bg-gray-400 opacity-35"></button>
+            <p class="absolute top-3 text-xl font-semibold text-white">MULAI MEMBACA</p>
+        </div>    
+        </a>
+       
         <div class="relative">
             <button id="saved" class=" bg-gray-300 p-2 absolute ml-4 rounded-md">
                 <svg xmlns="http://www.w3.org/2000/svg" width="2.3em" height="2.3em" viewBox="0 0 24 24"><path fill="currentColor" d="m9.55 18l-5.7-5.7l1.425-1.425L9.55 15.15l9.175-9.175L20.15 7.4z"/></svg>
@@ -66,18 +70,16 @@
     <div class="max-w-[1200px]">
         <h1 class="text-lg font-semibold text-white">Genres</h1>
         <div class="inline-flex">
-            <div class="bg-gray-300 h-6 w-28 text-center rounded-xl mr-2 hover:bg-gray-400">
-                <p class="font-semibold text-lg">{{ $book->kategori }}</p>
+            <div class="relative h-8 w-36 flex justify-center">
+            <div class="bg-black h-8 w-36 text-center rounded-full mr-2 hover:bg-gray-500 opacity-25">
             </div>
-            <div class="bg-gray-300 h-6 w-28 text-center rounded-xl mr-2 hover:bg-gray-400">
-                <p class="font-semibold text-lg">lorem</p>
+            <p class="font-semibold text-lg text-white absolute top-0">{{ $book->kategori }}</p>    
             </div>
-            <div class="bg-gray-300 h-6 w-28 text-center rounded-xl hover:bg-gray-400">
-                <p class="font-semibold text-lg">lorem</p>
-            </div>
+            
         </div>
 
-        <div>
+        <div class="bg-gradient-to-b from-[#1C3383] to-blue-700 p-4 mt-7 rounded-md">
+            <h1 class="text-white text-3xl">{{ $book->judul }}</h1>
             <p class="text-lg text-white mt-3">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, dolorem nihil quod fugit eum facere tempore aspernatur ea temporibus, vel excepturi, aut aliquam veritatis sapiente dolorum rem est quidem officiis!
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum eos commodi, delectus illum aut esse quam, voluptates ad obcaecati unde dolore, non minima. Aperiam cumque enim provident deserunt, laborum beatae?
@@ -87,20 +89,18 @@
 
         <div class="mt-20">
         <h1 class="text-lg font-semibold text-white">Author</h1>
-        <div>
-            <div class="bg-black py-2 w-28 text-center  mr-2 hover:bg-gray-900">
-                <p class="font-semibold text-lg text-white">{{ $book->penulis }}</p>
-            </div>
-        </div>    
+        <div class=" relative w-28 h-12 flex justify-center">
+            <div class=" w-28 h-12 bg-gray-300 rounded-md hover:bg-gray-400 opacity-35"></div>
+            <p class="absolute top-2 font-semibold text-lg text-white">{{$book->penulis}}</p>
+        </div> 
         </div>
 
         <div class="mt-3">
             <h1 class="text-lg font-semibold text-white">Artist</h1>
-            <div>
-                <div class="bg-black py-2 w-28 text-center  mr-2 hover:bg-gray-900">
-                    <p class="font-semibold text-lg text-white">Kinan</p>
-                </div>
-            </div>    
+            <div class=" relative w-28 h-12 flex justify-center">
+                <div class=" w-28 h-12 bg-gray-300 rounded-md hover:bg-gray-400 opacity-35"></div>
+                <p class="absolute top-2 font-semibold text-lg text-white">{{$book->penulis}}</p>
+            </div> 
             </div>
         
     </div>    
