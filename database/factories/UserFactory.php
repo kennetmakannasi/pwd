@@ -26,7 +26,7 @@ class UserFactory extends Factory
         $faker= faker::create("id_ID");
         return [
             'name' => $faker->name(),
-            'email' => fake()->unique()->safeEmail(),
+            'email' => $faker->unique()->safeEmail(),
             'email_verified_at' => now(),
             'password' => bcrypt('87654321'),
             'remember_token' => Str::random(10),
