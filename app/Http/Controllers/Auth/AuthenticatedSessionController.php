@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 
+
 class AuthenticatedSessionController extends Controller
 {
     /**
@@ -29,7 +30,15 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(RouteServiceProvider::HOME);
+        $user = Auth::user();
+
+        // Cek apakah kolom admin adalah 'Y'
+        if ($user->admin === 'Y') {
+            return redirect('/admin_dashboard'); // Ganti dengan rute ke halaman admin Anda
+        }
+
+        return redirect(RouteServiceProvider::HOME);
+        
     }
 
     /**
@@ -42,7 +51,8 @@ class AuthenticatedSessionController extends Controller
         $request->session()->invalidate();
 
         $request->session()->regenerateToken();
-
+        
+        
         return redirect('/');
     }
 }

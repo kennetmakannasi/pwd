@@ -1,4 +1,6 @@
 <?php
+
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -20,6 +22,8 @@ Route::get('/', function () {
 
 
 Route::middleware('auth')->group(function () {
+    route::get('/admin_dashboard',[AdminController::class,'adminauth'])->name('admin.dashboard');
+
     Route::get('/home', [BookController::class,'home'])->name('pwd/home');
 
     Route::get('/book', [BookController::class,'book'])->name('pwd/book');
@@ -31,9 +35,6 @@ Route::get('/detail/{book}', [BookController::class,'detail2'])->name('pwd.detai
 Route::get('/detail', function () {
     return view('pwd/detail');
 });
-    
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
