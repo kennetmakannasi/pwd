@@ -22,7 +22,13 @@ Route::get('/', function () {
 
 
 Route::middleware('auth')->group(function () {
-    route::get('/admin_dashboard',[AdminController::class,'adminauth'])->name('admin.dashboard');
+    route::middleware('admin')->group(function(){
+
+        route::get('/admin_dashboard',[AdminController::class,'datacount'])->name('admin.dashboard');
+
+        route::get('/userdata',[AdminController::class, 'userdata'])->name('admin.userdata');
+
+    });
 
     Route::get('/home', [BookController::class,'home'])->name('pwd/home');
 

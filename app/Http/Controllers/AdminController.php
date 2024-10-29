@@ -3,18 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use App\Models\book;
+use App\Models\User;
 
 class AdminController extends Controller
 {
-    public function adminauth(){
-    $user = Auth::user();
-
-    if ($user->admin === 'N') {
-        return redirect('/home'); 
+    public function datacount(){
+        $usercount = User::count();
+        $bookcount = book::count();
+        return view('admin.dashboard',['usercount'=>$usercount , 'bookcount'=>$bookcount]);
     }
 
-    return view('admin.dashboard'); 
-}
-
+    public function userdata(){
+        $user = user::all();
+        return view('admin.userdata',['user'=>$user]);
+    }
 }
