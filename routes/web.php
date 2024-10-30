@@ -38,10 +38,9 @@ Route::get('/search', [BookController::class,'search'])->name('pwd.search');
 Route::get('/detail/{book}', [BookController::class,'detail'])->name('pwd.detail');
 Route::get('/detail/{book}', [BookController::class,'detail2'])->name('pwd.detail');
 
-Route::get('/detail', function () {
-    return view('pwd/detail');
-});
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+route::get('/profileedit',[ProfileController::class,'profileedit'])->name('pwd.profileedit');
+
+
 });
 
 require __DIR__.'/auth.php';
