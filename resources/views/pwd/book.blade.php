@@ -25,7 +25,7 @@
           <div class="absolute h-full w-full bg-black rounded-lg opacity-0 hover:opacity-50 transition ease-in-out duration-150">
             <h1 class="text-white flex justify-center text-2xl mt-36 font-semibold text-center px-5">{{ $data->judul }}</h1></div>
           <div class="flex justify-center">
-             <img class=" rounded-md  mt-8 w-36 object-cover h-64" src="{{ asset('img/buku/'.$data->sampul) }}" alt="">
+             <img class=" rounded-md  mt-8 w-36 object-cover h-64" src="{{ asset($data->sampul) }}" alt="">
           </div>
         </div>
     </div>

@@ -15,7 +15,7 @@
 <!--banner-->
 <div class ="relative">
   <h2 class = "absolute text-white font-bold text-[50px] mt-[130px] ml-[80px] font-['space_grotesk']">Get acces to every <br> writings from all over <br> the world</h2>
-  <img src="{{ asset ('img/poster6.jpg/')}}" alt="poster" class = " rounded-2xl w-full h-[470px] object-cover">
+  <img src="{{ asset ('img/headerhome.png')}}" alt="poster" class = " rounded-2xl w-full h-[470px] object-cover">
 </div>
 
     <!--slider-->
@@ -35,7 +35,7 @@
                     <h1 class="text-white flex justify-center text-2xl mt-36 font-semibold text-center px-5">{{ $data->judul }}</h1>
                   </div>
                 </div>
-              <img class=" w-[350px] h-[350px] object-cover rounded-lg" src="{{ asset('img/buku/'.$data->sampul) }}" />  
+              <img class=" w-[350px] h-[350px] object-cover rounded-lg" src="{{ asset($data->sampul) }}" />  
               </div>
             </a>
           </div>
@@ -59,7 +59,7 @@
         <p class="text-white text-base mt-16 max-w-80" >{{ Str::limit('Lorem ipsum dolor sit amet, consectetur adipisicing elit', '100') }}</p>
         <button class="bg-gray-300 px-6 py-2 text-lg font-semibold rounded-md mt-3 hover:bg-gray-400"><a href="{{ route('pwd.detail',['book'=>$data] ) }}">Read More</a></button>    
       </div>
-      <img class=" w-40 h-60 object-cover mt-14 ml-8 rounded-md" src="{{ asset('img/buku/'.$data->sampul ) }}" alt="">
+      <img class=" w-40 h-60 object-cover mt-14 ml-8 rounded-md" src="{{ asset($data->sampul ) }}" alt="">
     </div>
   </div>
   @endforeach

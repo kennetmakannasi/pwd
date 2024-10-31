@@ -24,11 +24,11 @@
 
     <!--header-->
     <div class="relative">
-        <img class="h-[450px] w-full object-cover" src="{{ asset('img/buku/'.$book->sampul ) }}" alt="">
+        <img class="h-[450px] w-full object-cover" src="{{ asset($book->sampul ) }}" alt="">
         <div class="w-full blur-3xl bg-black h-full inset-0 absolute opacity-70">
         </div>
         <div class="absolute inset-0 flex justify-center ">
-            <img class=" h-80 w-52 mt-10 object-cover" src="{{ asset('img/buku/'.$book->sampul ) }}" alt="">
+            <img class=" h-80 w-52 mt-10 object-cover" src="{{ asset($book->sampul ) }}" alt="">
         </div>
     </div>
 
@@ -39,14 +39,14 @@
     </div>
     <div class="flex justify-center mt-3">
      <div class="float-start">
-        <img class="w-12 rounded-3xl absolute" src="img/pp.png" alt="">
+        <img class="w-12 h-12 rounded-3xl absolute object-cover" src="{{ asset(Auth::user()->fp) }}" alt="">
         <div class="ml-14 mt-3">
-            <p class="text-white">NamaUser</p>
+            <p class="text-white">{{ Auth::user()->name }}</p>
         </div>
     </div>    
     </div>    
     <div class="flex justify-center mt-8">
-        <a href="/img/pdf/{{ $book->file }}">
+        <a href="{{ asset($book->file) }}">
          <div class=" relative w-60 h-28 flex justify-center">
             <button class=" w-60 h-14 bg-gray-300 rounded-md hover:bg-gray-400 opacity-35"></button>
             <p class="absolute top-3 text-xl font-semibold text-white">MULAI MEMBACA</p>

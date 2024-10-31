@@ -25,7 +25,7 @@
           <div class="absolute h-full w-full bg-black rounded-lg opacity-0 hover:opacity-50 transition ease-in-out duration-150">
             <h1 class="text-white flex justify-center text-2xl mt-36 font-semibold text-center px-5">{{ $data->judul }}</h1></div>
           <div class="flex justify-center">
-             <img class=" rounded-md  mt-8 w-36 object-cover h-64" src="{{ asset('img/buku/'.$data->sampul) }}" alt="">
+             <img class=" rounded-md  mt-8 w-36 object-cover h-64" src="{{ asset($data->sampul) }}" alt="">
           </div>
         </div>
     </div>
@@ -34,76 +34,7 @@
     </div>
     
     
-    <!--
-    <div class="inline-flex ml-[80px] mt-[80px]">
-        <div class="bg-gradient-to-b from-amber-800 to-zinc-900 h-[290px] w-[250px]">
-          <img class="p-8 w-52 ml-4" src="img/buku/025dd125-3874-4d7e-84a7-f68acb9ec069.jpg" alt="">
-          <div class="bg-slate-50">
-          <h1 class="text-black font-bold ml-[70px]">Lorem ipsum</h1>
-            <p class="text-black font-light text-base mt-3 ml-8">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-            </div>
-        </div>
-    </div> 
-
-    <div class="inline-flex ml-[80px] mt-[80px]">
-        <div class="bg-gradient-to-b from-amber-800 to-zinc-900 h-[290px] w-[250px]">
-          <img class="p-8 w-52 ml-4" src="img/buku/025dd125-3874-4d7e-84a7-f68acb9ec069.jpg" alt="">
-          <div class="bg-slate-50">
-          <h1 class="text-black font-bold ml-[70px]">Lorem ipsum</h1>
-            <p class="text-black font-light text-base mt-3 ml-8">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="inline-flex ml-[80px] mt-[80px]">
-        <div class="bg-gradient-to-b from-amber-800 to-zinc-900 h-[290px] w-[250px]">
-          <img class="p-8 w-52 ml-4" src="img/buku/025dd125-3874-4d7e-84a7-f68acb9ec069.jpg" alt="">
-          <div class="bg-slate-50">
-          <h1 class="text-black font-bold ml-[70px]">Lorem ipsum</h1>
-            <p class="text-black font-light text-base mt-3 ml-8">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="inline-flex ml-[110px] mt-[130px]">
-        <div class="bg-gradient-to-b from-amber-800 to-zinc-900 h-[290px] w-[250px]">
-          <img class="p-8 w-52 ml-4" src="img/buku/025dd125-3874-4d7e-84a7-f68acb9ec069.jpg" alt="">
-          <div class="bg-slate-50">
-          <h1 class="text-black font-bold ml-[70px]">Lorem ipsum</h1>
-            <p class="text-black font-light text-base mt-3 ml-8">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-            </div>
-        </div>
-    </div>
-    <div class="inline-flex ml-[80px] mt-[80px]">
-        <div class="bg-gradient-to-b from-amber-800 to-zinc-900 h-[290px] w-[250px]">
-          <img class="p-8 w-52 ml-4" src="img/buku/025dd125-3874-4d7e-84a7-f68acb9ec069.jpg" alt="">
-          <div class="bg-slate-50">
-          <h1 class="text-black font-bold ml-[70px]">Lorem ipsum</h1>
-            <p class="text-black font-light text-base mt-3 ml-8">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="inline-flex ml-[80px] mt-[80px]">
-        <div class="bg-gradient-to-b from-amber-800 to-zinc-900 h-[290px] w-[250px]">
-          <img class="p-8 w-52 ml-4" src="img/buku/025dd125-3874-4d7e-84a7-f68acb9ec069.jpg" alt="">
-          <div class="bg-slate-50">
-          <h1 class="text-black font-bold ml-[70px]">Lorem ipsum</h1>
-            <p class="text-black font-light text-base mt-3 ml-8">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="inline-flex ml-[80px] mt-[80px]">
-        <div class="bg-gradient-to-b from-amber-800 to-zinc-900 h-[290px] w-[250px]">
-          <img class="p-8 w-52 ml-4" src="img/buku/025dd125-3874-4d7e-84a7-f68acb9ec069.jpg" alt="">
-          <div class="bg-slate-50">
-          <h1 class="text-black font-bold ml-[70px]">Lorem ipsum</h1>
-            <p class="text-black font-light text-base mt-3 ml-8">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-            </div>
-        </div>
-    </div>    
-!-->
+    
     <div class="h-52"></div>
 </body>
 </html>
