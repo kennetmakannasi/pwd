@@ -28,6 +28,9 @@ Route::middleware('auth')->group(function () {
         route::get('/bookdata',[AdminController::class,'bookdata'])->name('admin.bookdata');
         route::get('/addbook',[AdminController::class,'add'])->name('admin.addbook');
         route::post('/addbook',[AdminController::class,'store'])->name('admin.store');
+        route::get('/editbook/{book}',[AdminController::class,'editbook'])->name('admin.editbook');
+        route::put('/updatebook/{book}',[AdminController::class,'updatebook'])->name('admin.updatebook');
+        route::delete('/deletebook/{book}',[AdminController::class,'deletebook'])->name('admin.deletebook');
     });
 
     Route::get('/home', [BookController::class,'home'])->name('pwd/home');

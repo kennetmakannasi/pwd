@@ -20,6 +20,7 @@
             <th>Warna Preview BG</th>
             <th>Tanggal Dibuat</th>
             <th>Terakhir Di Update</th>
+            <th colspan="2">Aksi</th>
         </tr>
         @foreach ($book as $data)
             <tr class=" border-2 border-black">
@@ -32,6 +33,14 @@
                 <td>{{ $data->previewbg }}</td>
                 <td>{{ $data->created_at }}</td>
                 <td>{{ $data->updated_at }}</td>
+                <td><button><a href="{{ route('admin.editbook',['book'=>$data]) }}">Edit</a></button></td>
+                <td>
+                    <form action="{{ route('admin.deletebook',['book'=>$data]) }}" method="post">
+                        @csrf
+                        @method('delete')
+                        <input type="submit" value="Hapus">
+                    </form>
+                </td>
             </tr>
         @endforeach
     </table>

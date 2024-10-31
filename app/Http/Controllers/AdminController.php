@@ -50,4 +50,41 @@ class AdminController extends Controller
 
         return redirect(route('admin.dashboard'));
     }
+
+    public function editbook(book $book){
+        return view('admin.editbook',['book'=>$book]);
+    }
+
+    public function updatebook(book $book , Request $request){
+        
+
+        $updatedata = $request->validate([
+            'judul'=>'',
+            'kategori'=>'',
+            'sampul'=>'image|mimes:jpeg,png,jpg,gif',
+            'file'=>'mimes:pdf',
+            'penulis'=>'',
+            'previewbg'=>'',
+        ]);
+        if($request->hasfile('sampul')){
+            $sampulOriginalName = $request->file('sampul')->getClientOriginalName();
+            $sampulPath = $request->file('sampul')->move('img/buku', $sampulOriginalName);
+            $updatedata['sampul'] = $sampulPath;
+        };
+
+        if($request->hasfile('file')){
+            $fileOriginalName = $request->file('file')->getClientOriginalName();
+        $filePath = $request->file('file')->move('pdf', $fileOriginalName);
+        $updatedata['file'] = $filePath;
+        };
+        
+        $book->update($updatedata);
+
+        return redirect(route('admin.bookdata',));
+    }
+
+    public function deletebook(book $book){
+        $book->delete();
+        return redirect(route('admin.dashboard'));
+    }
 }
