@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use App\Models\book;
 
 class BookController extends Controller
@@ -40,10 +41,18 @@ class BookController extends Controller
                 if(count($book)>0){
                     $output ='
                         <div>';
-                            foreach($book as $row){
+                            foreach($book->slice(0,4) as $row){
+                                $judul = Str::limit($row->judul, '25');
                                 $output .='
-                                <div>
-                                <a href="http://pwd.test/detail/'.$row->id.'">'.$row->judul.'</a>
+                                <div class="inline-flex">
+                                    <div>
+                                        <div>
+                                            <img class="w-20 h-32 object-cover rounded-md m-3" src="http://pwd.test/'.$row->sampul.'"/>
+                                        </div>
+                                    </div>
+                                    <div class="text-lg mt-10 ml-3">
+                                        <a href="http://pwd.test/detail/'.$row->id.'">'.$judul.'</a>
+                                    </div>
                                 </div>
                                 ';
                             }

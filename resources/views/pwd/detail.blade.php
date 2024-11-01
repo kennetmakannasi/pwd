@@ -78,7 +78,7 @@
         </div>
 
         <div class="bg-gradient-to-b from-[#1C3383] to-blue-700 p-4 mt-7 rounded-md">
-            <h1 class="text-white text-3xl">{{ $book->judul }}</h1>
+            <h1 class="text-white text-3xl">{{ Str::limit($book->judul, '50') }}</h1>
             <p class="text-lg text-white mt-3">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, dolorem nihil quod fugit eum facere tempore aspernatur ea temporibus, vel excepturi, aut aliquam veritatis sapiente dolorum rem est quidem officiis!
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum eos commodi, delectus illum aut esse quam, voluptates ad obcaecati unde dolore, non minima. Aperiam cumque enim provident deserunt, laborum beatae?
