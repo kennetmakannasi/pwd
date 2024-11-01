@@ -42,6 +42,7 @@ Route::get('/detail/{book}', [BookController::class,'detail'])->name('pwd.detail
 Route::get('/detail/{book}', [BookController::class,'detail2'])->name('pwd.detail');
 
 route::get('/profileedit',[ProfileController::class,'profileedit'])->name('pwd.profileedit');
+route::put('/profileupdate/{user}',[ProfileController::class,'profileupdate'])->name('pwd.profileupdate');
 
 
 });

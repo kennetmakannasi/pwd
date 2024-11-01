@@ -8,16 +8,17 @@
     <x-head></x-head>
 </head>
 <body>
-    <img class="w-40" src="{{ asset('img/fp/'.$userdata->fp)  }}" alt="">
+    <img class="w-40" src="{{ asset($userdata->fp)  }}" alt="">
     <p>{{ $userdata->name }}</p>
 
-    <form action="" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('pwd.profileupdate',['user'=> $userdata]) }}" method="POST" enctype="multipart/form-data">
         @csrf
+        @method('put')
         <input type="text" name="name" value={{ $userdata->name }}>
         <input type="text" name="email" value={{ $userdata->email }}>
-        <input type="file" name="fp" id="">
+        <input type="file" name="fp" id="fp">
 
-        <input type="submit" value="update"></button>
+        <button type="submit">edit</button>
     </form>
 </body>
 </html>

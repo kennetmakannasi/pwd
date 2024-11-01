@@ -66,6 +66,7 @@ class AdminController extends Controller
             'penulis'=>'',
             'previewbg'=>'',
         ]);
+        
         if($request->hasfile('sampul')){
             $sampulOriginalName = $request->file('sampul')->getClientOriginalName();
             $sampulPath = $request->file('sampul')->move('img/buku', $sampulOriginalName);
@@ -74,8 +75,8 @@ class AdminController extends Controller
 
         if($request->hasfile('file')){
             $fileOriginalName = $request->file('file')->getClientOriginalName();
-        $filePath = $request->file('file')->move('pdf', $fileOriginalName);
-        $updatedata['file'] = $filePath;
+            $filePath = $request->file('file')->move('pdf', $fileOriginalName);
+            $updatedata['file'] = $filePath;
         };
         
         $book->update($updatedata);
