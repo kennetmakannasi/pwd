@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\ProfileController;
+use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,17 +35,19 @@ Route::middleware('auth')->group(function () {
         route::delete('/deletebook/{book}',[AdminController::class,'deletebook'])->name('admin.deletebook');
     });
 
-    Route::get('/home', [BookController::class,'home'])->name('pwd/home');
+    route::middleware('user')->group(function(){
+        Route::get('/home', [BookController::class,'home'])->name('pwd/home');
 
-    Route::get('/book', [BookController::class,'book'])->name('pwd/book');
-
-Route::get('/search', [BookController::class,'search'])->name('pwd.search');
-Route::get('/detail/{book}', [BookController::class,'detail'])->name('pwd.detail');
-Route::get('/detail/{book}', [BookController::class,'detail2'])->name('pwd.detail');
-
-route::get('/profileedit',[ProfileController::class,'profileedit'])->name('pwd.profileedit');
-route::put('/profileupdate/{user}',[ProfileController::class,'profileupdate'])->name('pwd.profileupdate');
-
+        Route::get('/book', [BookController::class,'book'])->name('pwd/book');
+        
+        Route::get('/search', [BookController::class,'search'])->name('pwd.search');
+        Route::get('/detail/{book}', [BookController::class,'detail'])->name('pwd.detail');
+        Route::get('/detail/{book}', [BookController::class,'detail2'])->name('pwd.detail');
+        
+        route::get('/profileedit',[ProfileController::class,'profileedit'])->name('pwd.profileedit');
+        route::put('/profileupdate/{user}',[ProfileController::class,'profileupdate'])->name('pwd.profileupdate');
+    });
+route::post('/logout',[AuthenticatedSessionController::class,'destroy'])->name('logout');
 
 });
 

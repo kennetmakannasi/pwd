@@ -7,10 +7,15 @@
     <title>Dashboard</title>
     <x-head></x-head>
 </head>
-<body>
-    <a href="/userdata">tabel</a>
-    <h1>Selamat Datang {{ Auth::user()->name }}</h1>
-    <p>Jumlah User: {{ $usercount }}</p>
-    <p>Jumlah Buku: {{ $bookcount }}</p>
+<body class="bg-gradient-to-b from-indigo-950 to-blue-400">
+    <div class="inline-flex">
+        <x-navbaradmin></x-navbaradmin>
+        <div>
+            <a href="/userdata">tabel</a>
+            <h1>Selamat Datang {{ Auth::user()->name }}</h1>
+            <p>Jumlah User: {{ $usercount }}</p>
+            <p>Jumlah Buku: {{ $bookcount }}</p>    
+        </div>    
+    </div>
 </body>
 </html>

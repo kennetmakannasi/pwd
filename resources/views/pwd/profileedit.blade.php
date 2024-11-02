@@ -20,5 +20,9 @@
 
         <button type="submit">edit</button>
     </form>
+    <form method="POST" action="{{ route('logout') }}">
+        @csrf
+        <input type="submit" value="Log Out">
+    </form>
 </body>
 </html>
