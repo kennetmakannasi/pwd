@@ -5,16 +5,16 @@
         </div>
         <div>
             <div class="ml-16 mt-5">
-                <a class="text-lg font-semibold text-white" href="{{ route('admin.dashboard') }}">Home</a>
+                <a class="{{ (Route::is('admin.dashboard')) ? ' bg-indigo-900 px-3 py-1 rounded-md text-lg font-semibold text-white' : 'text-lg font-semibold text-white' }}" href="{{ route('admin.dashboard') }}">Home</a>
             </div>
             <div class="ml-16 mt-5">
-                <a class="text-lg font-semibold text-white" href="{{ route('admin.addbook') }}">Create</a>
+                <a class="{{ (Route::is('admin.addbook')) ? ' bg-indigo-900 px-3 py-1 rounded-md text-lg font-semibold text-white' : 'text-lg font-semibold text-white' }}" href="{{ route('admin.addbook') }}">Create</a>
             </div>
             <div class="ml-16 mt-5">
-                <a class="text-lg font-semibold text-white" href="{{ route('admin.bookdata') }}">Book Data</a>
+                <a class="{{ (Route::is('admin.bookdata')) ? ' bg-indigo-900 px-3 py-1 rounded-md text-lg font-semibold text-white' : 'text-lg font-semibold text-white' }}" href="{{ route('admin.bookdata') }}">Book Data</a>
             </div>
             <div class="ml-16 mt-5">
-                <a class="text-lg font-semibold text-white" href="{{ route('admin.userdata') }}">User Data</a>
+                <a class="{{ (Route::is('admin.userdata')) ? ' bg-indigo-900 px-3 py-1 rounded-md text-lg font-semibold text-white' : 'text-lg font-semibold text-white' }}" href="{{ route('admin.userdata') }}">User Data</a>
             </div> 
             <div class="ml-16 mt-48">
                 <form method="POST" action="{{ route('logout') }}">

@@ -24,18 +24,18 @@ Route::get('/', function () {
 
 
 Route::middleware('auth')->group(function () {
-    route::middleware('admin')->group(function(){
-        route::get('/admin_dashboard',[AdminController::class,'datacount'])->name('admin.dashboard');
-        route::get('/userdata',[AdminController::class, 'userdata'])->name('admin.userdata');
-        route::get('/bookdata',[AdminController::class,'bookdata'])->name('admin.bookdata');
-        route::get('/addbook',[AdminController::class,'add'])->name('admin.addbook');
-        route::post('/addbook',[AdminController::class,'store'])->name('admin.store');
-        route::get('/editbook/{book}',[AdminController::class,'editbook'])->name('admin.editbook');
-        route::put('/updatebook/{book}',[AdminController::class,'updatebook'])->name('admin.updatebook');
-        route::delete('/deletebook/{book}',[AdminController::class,'deletebook'])->name('admin.deletebook');
+    Route::middleware('admin')->group(function(){
+        Route::get('/admin_dashboard',[AdminController::class,'datacount'])->name('admin.dashboard');
+        Route::get('/userdata',[AdminController::class, 'userdata'])->name('admin.userdata');
+        Route::get('/bookdata',[AdminController::class,'bookdata'])->name('admin.bookdata');
+        Route::get('/addbook',[AdminController::class,'add'])->name('admin.addbook');
+        Route::post('/addbook',[AdminController::class,'store'])->name('admin.store');
+        Route::get('/editbook/{book}',[AdminController::class,'editbook'])->name('admin.editbook');
+        Route::put('/updatebook/{book}',[AdminController::class,'updatebook'])->name('admin.updatebook');
+        Route::delete('/deletebook/{book}',[AdminController::class,'deletebook'])->name('admin.deletebook');
     });
 
-    route::middleware('user')->group(function(){
+    Route::middleware('user')->group(function(){
         Route::get('/home', [BookController::class,'home'])->name('pwd/home');
 
         Route::get('/book', [BookController::class,'book'])->name('pwd/book');
@@ -44,10 +44,10 @@ Route::middleware('auth')->group(function () {
         Route::get('/detail/{book}', [BookController::class,'detail'])->name('pwd.detail');
         Route::get('/detail/{book}', [BookController::class,'detail2'])->name('pwd.detail');
         
-        route::get('/profileedit',[ProfileController::class,'profileedit'])->name('pwd.profileedit');
-        route::put('/profileupdate/{user}',[ProfileController::class,'profileupdate'])->name('pwd.profileupdate');
+        Route::get('/profileedit',[ProfileController::class,'profileedit'])->name('pwd.profileedit');
+        Route::put('/profileupdate/{user}',[ProfileController::class,'profileupdate'])->name('pwd.profileupdate');
     });
-route::post('/logout',[AuthenticatedSessionController::class,'destroy'])->name('logout');
+Route::post('/logout',[AuthenticatedSessionController::class,'destroy'])->name('logout');
 
 });
 

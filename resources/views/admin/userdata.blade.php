@@ -1,14 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>UserData</title>
-    <x-head></x-head>
-</head>
-<body>
-    <a href="/admin_dashboard">dashboard</a>
+@extends('layouts.admin')
+
+@section('title','userdata')
+
+@section('content')
     <table class=" border-2 border-black">
         <tr class=" border-2 border-black">
             <th>Nama</th>
@@ -23,5 +17,5 @@
             </tr>
         @endforeach
     </table>
-</body>
-</html>
+@endsection
+    
