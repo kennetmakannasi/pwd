@@ -11,7 +11,8 @@ class AdminController extends Controller
     public function datacount(){
         $usercount = User::count();
         $bookcount = book::count();
-        return view('admin.dashboard',['usercount'=>$usercount , 'bookcount'=>$bookcount]);
+        $book = book::inRandomOrder()->get();
+        return view('admin.dashboard',['usercount'=>$usercount , 'bookcount'=>$bookcount, 'book'=>$book]);
     }
 
     public function userdata(){
