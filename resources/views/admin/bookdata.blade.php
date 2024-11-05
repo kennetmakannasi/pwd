@@ -30,13 +30,32 @@
             <td>{{ $data->updated_at }}</td>
             <td><button><a href="{{ route('admin.editbook',['book'=>$data]) }}">Edit</a></button></td>
             <td>
-                <form action="{{ route('admin.deletebook',['book'=>$data]) }}" method="post">
+                <form class="deleteform" action="{{ route('admin.deletebook',['book'=>$data]) }}" method="post">
                     @csrf
                     @method('delete')
-                    <input type="submit" value="Hapus">
+                    <button class="deletebutton">hapus</button>
                 </form>
             </td>
         </tr>
     @endforeach
 </table>
+<script>
+    $('.deletebutton').click(function (event){
+        event.preventDefault(); 
+
+        var form = $(this).closest('form.deleteform');
+
+        Swal.fire({
+            title: 'Apakah Anda Yakin Ingin Menghapus Buku Ini?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Ya',
+            cancelButtonText: 'Batal',
+        }).then((result) => {
+            if (result.isConfirmed) {
+                form.submit();
+            };
+        });
+    });
+</script>
 @endsection

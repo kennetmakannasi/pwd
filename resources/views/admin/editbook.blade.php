@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>EditBook</title>
+    <x-head></x-head>
 </head>
 <body>
-    <form action="{{ route('admin.updatebook',['book'=>$book]) }}" method="POST" enctype="multipart/form-data">
+    <form id="edit" action="{{ route('admin.updatebook',['book'=>$book]) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('put')
         <div>
@@ -35,8 +36,25 @@
             <input type="text" name="previewbg" id="previewbg" value="{{ $book->previewbg }}">    
         </div>
         
-        <button type="submit">edit</button>
+        <button id="editbutton">edit</button>
         
     </form>
 </body>
+<script>
+    $('#editbutton').click(function (event){
+        event.preventDefault(); 
+
+        Swal.fire({
+            title: 'Apakah Anda Yakin Ingin Mengedit Buku Ini?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Ya',
+            cancelButtonText: 'Batal',
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $('#edit').submit();
+            };
+        });
+    });
+</script>
 </html>
