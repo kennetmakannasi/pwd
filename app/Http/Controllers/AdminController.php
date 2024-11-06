@@ -87,6 +87,6 @@ class AdminController extends Controller
 
     public function deletebook(book $book){
         $book->delete();
-        return redirect(route('admin.dashboard'));
+        return redirect(route('admin.bookdata'));
     }
 }

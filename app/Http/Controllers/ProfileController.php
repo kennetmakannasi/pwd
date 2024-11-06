@@ -29,7 +29,15 @@ class ProfileController extends Controller
         
         $user->update($updatedata);
 
-        return redirect(route('pwd/home'));
+        return redirect(route('pwd.profileedit'));
+    }
+
+    protected function fpdelete(User $user){
+        $user->fp = 'img/fp/default.jpg';
+
+        $user->save();
+
+        return redirect( route('pwd.profileedit'));
     }
 
 }

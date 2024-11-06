@@ -11,6 +11,12 @@
     <img class="w-40" src="{{ asset($userdata->fp)  }}" alt="">
     <p>{{ $userdata->name }}</p>
 
+    <form action="{{ route('pwd.fpdelete',['user'=>$userdata]) }}" method="post">
+        @csrf
+        @method('post')
+        <button type="submit">Hapus Foto</button>
+    </form>
+
     <form action="{{ route('pwd.profileupdate',['user'=> $userdata]) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('put')

@@ -15,7 +15,7 @@
             </div>
         @endforeach    
     </div>    
-    <div>
+    <div class="float-end right-56">
         <div class="bg-[#5669CB] text-xl text-white font-semibold p-6 pr-16 rounded-lg mt-10">
             <div>
                 <div class="inline-flex">

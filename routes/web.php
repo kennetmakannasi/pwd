@@ -46,6 +46,7 @@ Route::middleware('auth')->group(function () {
         
         Route::get('/profileedit',[ProfileController::class,'profileedit'])->name('pwd.profileedit');
         Route::put('/profileupdate/{user}',[ProfileController::class,'profileupdate'])->name('pwd.profileupdate');
+        Route::post('/fpdelete/{user}',[ProfileController::class,'fpdelete'])->name('pwd.fpdelete');
     });
 Route::post('/logout',[AuthenticatedSessionController::class,'destroy'])->name('logout');
 
